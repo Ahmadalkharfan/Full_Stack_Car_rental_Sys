@@ -27,14 +27,16 @@ const addUser =  async (req,res) => {
 
     //using sequalizer to create the user.
     const user = await User.create(info)
-    //check if the user is created
+    //send the data 
     res.status(200).send(user)
+     //check if the user is created
     console.log(user)
 }
 
 // get all users
 const getAllUsers = async (req,res) => {
     let users = await User.findAll({})
+    //send the data 
     res.send(users)
 }
 
@@ -49,7 +51,7 @@ const getOneUser = async (req,res) => {
 const updateUser = async (req,res) => {
     let id = req.params.id
     const user = await User.update(req.body, {where: { id: id}})
-
+//send the data 
     res.status(200).send(user)
 }
 
@@ -57,7 +59,7 @@ const updateUser = async (req,res) => {
 const deleteUser = async (req,res) => {
     let id = req.params.id
     await User.destroy({where: { id: id}})
-
+//send the data 
     res.status(200).send('User is deleted')
 }
 
@@ -68,10 +70,12 @@ const getUserCars = async (req,res) => {
     const data = await User.findOne({
         include: [{
             model: Car,
-            as: 'car'
+            as: 'cars'
         }],
         where: {id: id}
     })
+    //send the data 
+    res.status(200).send(data)
 }
 
 module.exports = {

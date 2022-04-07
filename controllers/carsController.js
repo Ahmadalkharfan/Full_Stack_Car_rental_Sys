@@ -31,14 +31,16 @@ const addCar =  async (req,res) => {
 
     //using sequalizer to create the car.
     const car = await Car.create(info)
-    //check if the car is created
+    //send the data 
     res.status(200).send(car)
+    //check if the car is created
     console.log(car)
 }
 
 // get all cars
 const getAllCars = async (req,res) => {
     let cars = await Car.findAll({})
+    //send the data 
     res.send(cars)
 }
 
@@ -46,6 +48,7 @@ const getAllCars = async (req,res) => {
 const getOneCar = async (req,res) => {
     let id = req.params.id
     let car = await Car.findOne({where: {id: id}})
+    //send the data 
     res.send(car)
 }
 
@@ -53,7 +56,7 @@ const getOneCar = async (req,res) => {
 const updateCar = async (req,res) => {
     let id = req.params.id
     const car = await Car.update(req.body, {where: { id: id}})
-
+    //send the data 
     res.status(200).send(car)
 }
 
@@ -61,7 +64,7 @@ const updateCar = async (req,res) => {
 const deleteCar = async (req,res) => {
     let id = req.params.id
     await Car.destroy({where: { id: id}})
-
+    //send the data 
     res.status(200).send('Car is deleted')
 }
 
@@ -76,6 +79,8 @@ const getCarAvailability = async (req,res) => {
         }],
         where: {id: id}
     })
+    //send the data 
+    res.status(200).send(data)
 }
 
 module.exports = {
