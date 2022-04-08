@@ -9,3 +9,7 @@ Instructions:
 To run this programme on your local machine please go to config/dbConfig.js and change the info depending on your settings.
 the programme should auto create tables with the foreign keys and insert a few records inside of them.
 
+
+Ahmad Alkharfan.
++60194977353
+ahmadalkharfan3@gmail.com
