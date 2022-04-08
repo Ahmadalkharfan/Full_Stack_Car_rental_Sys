@@ -5,7 +5,7 @@ import { Container, Form, Button } from "react-bootstrap";
 
 
 
-const AddUser = ({history}) => {
+const AddUser = () => {
 
     const [username, setUsername] = useState('')
     //const [email, setEmail] = useState('')
@@ -33,7 +33,7 @@ const AddUser = ({history}) => {
 
         await axios.post('api/users/addUser', data)
 
-        history.push("/users");
+        
     }
 
 

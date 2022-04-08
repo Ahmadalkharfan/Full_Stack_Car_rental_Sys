@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Row, Col, Table } from 'react-bootstrap';
+import { Container, Row, Col, Table, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import CarTable from '../components/CarTable';
 
 const ShowCars = () => {
@@ -22,7 +23,11 @@ const ShowCars = () => {
                 <hr />
                 <Row>
                     <Col className='col-12' >
-
+                        <Row>
+                            <Link to={`/addCar`}>
+                                <Button >Create Car</Button>
+                            </Link>
+                        </Row>
                         <Table striped responsive bordered hover>
                             <thead>
                                 <tr>

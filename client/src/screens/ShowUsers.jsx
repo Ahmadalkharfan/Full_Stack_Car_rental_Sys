@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Row, Col, Table } from 'react-bootstrap';
+import { Container, Row, Col, Table, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import UserTable from '../components/UserTable';
 
 const ShowUsers = () => {
@@ -22,28 +23,34 @@ const ShowUsers = () => {
                 <hr />
                 <Row>
                     <Col className='col-12' >
+                        <Row>
+                            <Link to={`/addUser`}>
+                                <Button >Create User</Button>
+                            </Link>
+                        </Row>
+                        <Row>
+                            <Table striped responsive bordered hover>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Username</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Birthday</th>
+                                        <th>Gender</th>
+                                        <th>Role</th>
+                                        <th>Mobile Number</th>
+                                        <th>Options</th>
+                                    </tr>
+                                </thead>
+                                { //send the users to the table body.
+                                    users.map(user => {
+                                        return <UserTable key={user.id} user={user} />
 
-                        <Table striped responsive bordered hover>
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Username</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Birthday</th>
-                                    <th>Gender</th>
-                                    <th>Role</th>
-                                    <th>Mobile Number</th>
-                                    <th>Options</th>
-                                </tr>
-                            </thead>
-                            { //send the users to the table body.
-                                users.map(user => {
-                                    return <UserTable key={user.id} user={user} />
-
-                                })
-                            }
-                        </Table>
+                                    })
+                                }
+                            </Table>
+                        </Row>
                     </Col>
                 </Row>
 

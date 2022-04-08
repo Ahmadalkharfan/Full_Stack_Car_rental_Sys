@@ -47,7 +47,7 @@ db.sequelize.sync({force: false})
 // cars foreign key 1 to many
 db.users.hasMany(db.cars,{
     foreignKey: 'user_id',
-    as: 'cars'
+    as: 'car'
 })
 
 db.cars.belongsTo(db.users,{

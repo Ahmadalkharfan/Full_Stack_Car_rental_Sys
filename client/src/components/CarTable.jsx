@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Table, Card, NavbarBrand } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 
@@ -34,6 +34,11 @@ const CarTable = ({ car }) => {
                     <td>{car.location_longitude}</td>
                     <td>{car.day_price}</td>
                     <td>{car.is_featured + ''}</td>
+                    <td>
+                        <Link to={`/car/${car.id}`}>
+                            <Button>View</Button>
+                        </Link> 
+                    </td>
 
                 </tr>
             </tbody>

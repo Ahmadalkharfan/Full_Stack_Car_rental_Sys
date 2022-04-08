@@ -71,7 +71,7 @@ const getUserCars = async (req,res) => {
     const data = await User.findOne({
         include: [{
             model: Car,
-            as: 'cars'
+            as: 'car'
         }],
         where: {id: id}
     })
