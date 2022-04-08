@@ -9,6 +9,10 @@ module.exports = (sequelize,DataTypes) => {
             type: DataTypes.STRING(30),
             allowNull: false
         },
+        //email: {
+          //  type: DataTypes.STRING(30),
+            //allowNull: true
+        //},
         firstName: {
             type: DataTypes.STRING(30),
             allowNull: false
@@ -27,7 +31,7 @@ module.exports = (sequelize,DataTypes) => {
         },
         role: {
             type: DataTypes.STRING(30),
-            allowNull: false
+            allowNull: true
         },
         pass: {
             type: DataTypes.STRING(30),

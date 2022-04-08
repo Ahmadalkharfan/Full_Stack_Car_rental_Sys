@@ -15,6 +15,7 @@ const addUser =  async (req,res) => {
     let info = {
         id: req.body.id,
         username: req.body.username,
+        //email: req.body.email,
         firstName:req.body.firstName,
         lastName:req.body.lastName,
         birthday: req.body.birthday,
